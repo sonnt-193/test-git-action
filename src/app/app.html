@@ -1,0 +1,33 @@
+<div class="login-container">
+  <h2>Đăng Nhập</h2>
+  
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input 
+      type="email" 
+      id="email" 
+      (input)="updateEmail($event)"
+      placeholder="Nhập email của bạn"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="password">Mật khẩu:</label>
+    <input 
+      type="password" 
+      id="password" 
+      (input)="updatePassword($event)"
+      placeholder="Nhập mật khẩu"
+    >
+  </div>
+
+  <button id="btn-login" (click)="onLogin()">Login</button>
+
+  @if (errorMessage()) {
+    <p id="error-msg" class="error">{{ errorMessage() }}</p>
+  }
+  
+  @if (successMessage()) {
+    <p id="success-msg" class="success">{{ successMessage() }}</p>
+  }
+</div>
